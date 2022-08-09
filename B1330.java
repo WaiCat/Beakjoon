@@ -1,17 +1,22 @@
 import java.util.Scanner;
 
 public class B1330 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         final int a = sc.nextInt();
         final int b = sc.nextInt();
 
-        if(a>b)
+        if (a > b){
             System.out.println(">");
-        else if(b>a)
+        }
+        else if (b > a){
             System.out.println("<");
-        else
+        }
+        else{
             System.out.println("==");
+        }
+        
+        sc.close();
     }
 }
