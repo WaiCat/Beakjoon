@@ -14,5 +14,6 @@ public class B1330 {
         } else {
             System.out.println("==");
         }
+        sc.close();
     }
 }
