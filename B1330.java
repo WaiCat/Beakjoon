@@ -7,16 +7,13 @@ public class B1330 {
         final int a = sc.nextInt();
         final int b = sc.nextInt();
 
-        if (a > b){
+        if (a > b) {
             System.out.println(">");
-        }
-        else if (b > a){
+        } else if (b > a) {
             System.out.println("<");
-        }
-        else{
+        } else {
             System.out.println("==");
         }
-        
         sc.close();
     }
 }
