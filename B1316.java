@@ -4,7 +4,6 @@ public class B1316 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        String k = sc.nextLine();
         int count = 0;
         for (int i = 0; i < n; i++) {
             int[] num = new int[26];
