@@ -18,11 +18,11 @@ public class B1929 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
+        sc.close();
         for (; n <= m; n++) {
             if (So(n)) {
                 System.out.println(n);
             }
         }
-        sc.close();
     }
 }
