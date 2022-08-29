@@ -16,6 +16,7 @@ public class B2581 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
+        sc.close();
         int min = 0;
         int sum = 0;
         for (; n <= m; n++) {
@@ -36,6 +37,5 @@ public class B2581 {
             System.out.println(sum);
             System.out.println(min);
         }
-        sc.close();
     }
 }
