@@ -30,6 +30,5 @@ public class B11729 {
 
         bw.flush();
 		bw.close();
-        
     }
 }
