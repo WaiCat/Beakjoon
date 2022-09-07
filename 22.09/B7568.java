@@ -23,7 +23,7 @@ public class B7568 {
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (arr[j][1] < arr[i][1] && arr[j][0] < arr[i][0]){
+                if (arr[j][1] < arr[i][1] && arr[j][0] < arr[i][0]) {
                     arr[j][2]++;
                 }
             }
@@ -32,6 +32,6 @@ public class B7568 {
             bw.write(arr[i][2] + " ");
         }
         bw.flush();
-		bw.close();
+        bw.close();
     }
 }
