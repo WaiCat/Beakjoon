@@ -4,27 +4,35 @@ import java.util.*;
 public class B1002 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
         int t = Integer.parseInt(br.readLine());
 
-        double[][] arr = new double[t][6];
 
         for (int i = 0; i < t; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < 6; j++) {
-                arr[i][j] = Double.parseDouble(st.nextToken());
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+ 
+			int x1 = Integer.parseInt(st.nextToken());
+			int y1 = Integer.parseInt(st.nextToken());
+			int r1 = Integer.parseInt(st.nextToken());
+ 
+			int x2 = Integer.parseInt(st.nextToken());
+			int y2 = Integer.parseInt(st.nextToken());
+			int r2 = Integer.parseInt(st.nextToken());
+
+            int dis = (int)Math.pow(x1-x2,2) + (int)Math.pow(y1-y2,2);
+            int sum = (int)Math.pow(r1+r2,2);
+            int de = (int)Math.pow(r1-r2,2);
+
+            if(x1==x2 && y1==y2 && r1==r2){
+                System.out.println(-1);
             }
-            double dis = Math.sqrt(Math.pow(arr[i][0] - arr[i][2], 2) + Math.pow(arr[i][1] - arr[i][3], 2));
-            double sum = arr[i][4] + arr[i][5];
-            double de = Math.abs(arr[i][4] - arr[i][5]);
-            if (dis == de || dis == sum) {
-                System.out.println("1");
-            } else if (dis < sum && de < dis) {
-                System.out.println("2");
-            } else if (dis == 0 && arr[i][4] == arr[i][5]) {
-                System.out.println("-1");
-            } else {
-                System.out.println("0");
+            else if(dis == sum || dis ==de){
+                System.out.println(1);
+            }
+            else if(dis > sum || dis < de){
+                System.out.println(0);
+            }
+            else{
+                System.out.println(2);
             }
         }
     }
