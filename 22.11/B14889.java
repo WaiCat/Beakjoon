@@ -55,12 +55,11 @@ public class B14889 {
                 }
                 for (int j = 0; j < n / 2; j++) {
                     team2[j] = -1;
-                } 
+                }
             }
-            
-            if (count < n / 2 -1) {
+
+            if (count < n / 2 - 1) {
                 choice(i + 1, count + 1);
-                 
             }
         }
     }
