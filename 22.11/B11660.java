@@ -5,6 +5,7 @@ public class B11660 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
@@ -37,7 +38,8 @@ public class B11660 {
                     sum += arr[j][y2] - arr[j][y1 - 1];
                 }
             }
-            System.out.println(sum);
+            sb.append(sum + "\n");
         }
+        System.out.print(sb);
     }
 }
