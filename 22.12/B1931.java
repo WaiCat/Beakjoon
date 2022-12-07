@@ -49,10 +49,10 @@ public class B1931 {
             for (; index < n; index++) {
                 if (arr[index][0] >= minE) {
                     if (status == 0) {
-                    min = arr[index][1];
-                    count++;
-                    status = 1;
-                    continue;
+                        min = arr[index][1];
+                        count++;
+                        status = 1;
+                        continue;
                     }
                     if (arr[index][1] <= min) {
                         min = arr[index][1];
@@ -63,17 +63,12 @@ public class B1931 {
                         break;
                     }
                     if (arr[index][0] >= min) {
-                        //count++;
                         break;
                     }
                 }
             }
         }
-        // if (min == arr[index - 1][1]) {
-        //     if (n > 2) {
-        //         count++;
-        //     }
-        // }
+
         System.out.println(count);
     }
 }
