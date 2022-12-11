@@ -7,7 +7,7 @@ public class B10828 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int[] arr = new int[10001];
+        int[] arr = new int[n];
 
         int size = 0;
 
