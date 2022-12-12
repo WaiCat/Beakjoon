@@ -43,9 +43,9 @@ public class B4949 {
                 }
             }
             if (status && stack.empty()) {
-                System.out.println("YES");
+                System.out.println("yes");
             } else {
-                System.out.println("NO");
+                System.out.println("no");
             }
         }
     }
