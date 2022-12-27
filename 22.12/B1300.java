@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class B1300 {
     public static void main(String[] args) throws IOException {
@@ -9,21 +8,21 @@ public class B1300 {
         int m = Integer.parseInt(br.readLine());
 
         int l = 1;
-        int r = n * n;
+        int r = m;
 
-        int mid = (l + r) / 2;
         while (l < r) {
             int count = 0;
+            int mid = (l + r) / 2;
+
             for (int i = 1; i <= n; i++) {
-                count += mid / i < n ? mid / i : n;
+                count += Math.min(mid / i, n);
             }
             if (count < m) {
-                l = mid+1;
+                l = mid + 1;
             } else {
                 r = mid;
             }
-            mid = (l + r) / 2;
         }
-        System.out.println(mid);
+        System.out.println(l);
     }
 }
