@@ -7,10 +7,10 @@ total = 0
 
 for _ in range(n):
     str = stdin.readline().rstrip()
-    if(str == "ENTER"):
+    if (str == "ENTER"):
         lists.clear()
-    elif(str not in lists):
+    elif (str not in lists):
         total += 1
         lists.add(str)
-    
+
 print(total)

@@ -4,7 +4,7 @@ from collections import deque
 n = int(stdin.readline())
 d = deque()
 
-answers =[]
+answers = []
 
 for i in range(n):
     k = list(stdin.readline().split())

@@ -1,19 +1,20 @@
 import sys
 
+
 class words:
     def __init__(self, word):
         self.word = word
         self.num = 0
-    
+
     def up(self):
         self.num += 1
-    
+
     def __eq__(self, other):
         return self.word == other.word
-    
+
     def __lt__(self, other):
         if self.num != other.num:
-            return self.num > other.num 
+            return self.num > other.num
         elif len(self.word) != len(other.word):
             return len(self.word) > len(other.word)
         else:
