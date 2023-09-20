@@ -1,12 +1,11 @@
 import sys
-input = sys.stdin.readline
 
 n = int(input())
 
 arr = [[0 for i in range(3)]for i in range(n)]
 
 for i in range(n):
-    r, g, b = map(int, input().split())
+    r, g, b = map(int, sys.stdin.readline().split())
     arr[i][0] = r
     arr[i][1] = g
     arr[i][2] = b
