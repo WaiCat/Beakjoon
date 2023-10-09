@@ -5,21 +5,20 @@ sum = 1
 arr = []
 
 mod = 2
-d = b
-while d != 0:
-    e = d % mod
-    if(e < 2):    
-        arr.append(e % mod)
-        d -= e
+
+tmp = b
+
+k = 0
+
+while tmp > 1:
+    if (tmp % mod < 2):
+        arr.append(k)
+        k = 0
+        mod = 2
     else:
-        arr.append(0)
-    mod *=2
-    
-mod = a % c
+        k += 1
+        mod = mod * mod
+if (tmp > 0):
+    arr.append(tmp)
 
-for i in range(len(arr)):
-    sum = ((sum % c ) * mod * arr[i]) % c
-    mod = (mod * mod) % c
-
-
-print(sum)
+print(arr)

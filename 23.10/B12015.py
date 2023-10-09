@@ -8,7 +8,7 @@ def Binary_search(target, start, end):
     while start < end:
         mid = (start + end) // 2
         if (dp[mid] < target):
-            start = mid
+            start = mid - 1
         else:
             end = mid
 
