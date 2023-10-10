@@ -1,24 +1,19 @@
 a, b, c = map(int, input().split())
 
 sum = 1
-
 arr = []
 
-mod = 2
+while b > 1:
+    arr.append(b % 2)
+    b = b // 2
 
-tmp = b
+if (b > 0):
+    arr.append(b)
 
-k = 0
+for value in arr:
+    if (value == 1):
+        sum = (sum * a) % c
 
-while tmp > 1:
-    if (tmp % mod < 2):
-        arr.append(k)
-        k = 0
-        mod = 2
-    else:
-        k += 1
-        mod = mod * mod
-if (tmp > 0):
-    arr.append(tmp)
+    a = (a % c * a % c) % c
 
-print(arr)
+print(sum)
