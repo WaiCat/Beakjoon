@@ -14,8 +14,6 @@ public class B11003 {
         st = new StringTokenizer(br.readLine());
         Deque<node> de = new LinkedList<>();
 
-        int[] min = new int[n];
-
         for (int i = 0; i < n; i++) {
             int a = Integer.parseInt(st.nextToken());
 
