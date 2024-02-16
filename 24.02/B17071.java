@@ -5,11 +5,11 @@ public class B17071 {
 
     static class Bfs {
         int value;
-        int num;
+        int time;
 
-        public Bfs(int value, int num) {
+        public Bfs(int value, int time) {
             this.value = value;
-            this.num = num;
+            this.time = time;
         }
     }
 
@@ -21,76 +21,47 @@ public class B17071 {
         int k = Integer.parseInt(st.nextToken());
 
         Deque<Bfs> queue = new ArrayDeque<>();
-        boolean[] visited = new boolean[500001];  // 배열 크기를 적절하게 조절할 수 있음
+        boolean[][] visited = new boolean[500001][2];
         int result = 0;
-        int speed = 1;
+        int speed = 0;
 
         queue.add(new Bfs(n, 0));
-        visited[n] = true;
+        visited[n][0] = true;
 
         if (k > 500000) {
           System.out.println(-1);
+        } else if (k == n) {
+          System.out.println(0);
         } else {
-          if (n > k) {
             while (!queue.isEmpty()) {
               Bfs current = queue.poll();
               int value = current.value;
-              int num = current.num + 1;
-              if (num - 1 == speed) {
-                k += speed++;
-              }
-
-              if (k > 500000) {
-                result = -1;
-                break;
-              }
-              if (value == k) {
-                result = --num;
-                break;
-              }
-
-              addToQueue(queue, value - 1, num);
-              addToQueue(queue, value * 2, num);
-              addToQueue(queue, value + 1, num);
-            }
-          }else if(n < k) {
-            while (!queue.isEmpty()) {
-              Bfs current = queue.poll();
-              int value = current.value;
-              int num = current.num + 1;
-              if (num - 1 == speed) {
-                k += speed++;
+              int time = current.time;
+              if (time > speed) {
+                k += ++speed;
                 if (k > 500000) {
-                result = -1;
-                break;
-              }
-                visited[k] = false;
-              }
-            
-              if (value == k) {
-                result = --num;
-                break;
+                  result = -1;
+                  break;
+                }
+                if (visited[k][time % 2]) {
+                  result = speed;
+                  break;
+                }
               }
 
-              addToQueueIfNotVisited(queue, visited, value - 1, num);
-              addToQueueIfNotVisited(queue, visited, value * 2, num);
-              addToQueueIfNotVisited(queue, visited, value + 1, num);
+              addToQueueIfNotVisited(queue, visited, value - 1, time);
+              addToQueueIfNotVisited(queue, visited, value * 2, time);
+              addToQueueIfNotVisited(queue, visited, value + 1, time);
             }
-          }
           System.out.println(result);
         }
     }
 
-    private static void addToQueueIfNotVisited(Deque<Bfs> queue, boolean[] visited, int value, int num) {
-      if (value >= 0 && value < visited.length && !visited[value]) {
-        visited[value] = true;
-        queue.add(new Bfs(value, num));
+    private static void addToQueueIfNotVisited(Deque<Bfs> queue, boolean[][] visited, int value, int time) {
+      time++;
+      if (value >= 0 && value < visited.length && !visited[value][time % 2]) {
+        visited[value][time % 2] = true;
+        queue.add(new Bfs(value, time));
       }
-    }
-    
-    private static void addToQueue(Deque<Bfs> queue, int value, int num) {
-        if (value >= 0) {
-            queue.add(new Bfs(value, num));
-        }
     }
 }
