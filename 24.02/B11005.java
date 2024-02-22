@@ -13,7 +13,7 @@ public class B11005 {
 
     while (n != 0) {
       int tmp = n % b;
-      if (tmp > 10) {
+      if (tmp > 9) {
         tmp += 55;
         d.addFirst(Character.toString(tmp));
       } else {
