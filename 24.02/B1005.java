@@ -57,7 +57,6 @@ public class B1005 {
       int w = Integer.parseInt(br.readLine());
 
       System.out.println(dp[w]);
-      System.out.println();
     }
   }
 }
