@@ -15,7 +15,7 @@ public class B1011 {
 
       int num = y - x;
 
-      int border = (int) Math.sqrt(num);
+      long border = (int) Math.sqrt(num);
 
       if (num <= border * (border + 1)) {
         if (num <= border * border) {
