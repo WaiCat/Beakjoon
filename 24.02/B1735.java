@@ -21,8 +21,6 @@ public class B1735 {
 
     aa += ba;
 
-    System.out.print(aa + " " + l);
-
     int g = gcd(aa, l);
 
     if (g == 1) {
