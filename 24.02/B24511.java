@@ -4,19 +4,22 @@ import java.util.*;
 public class B24511 {
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    StringBuilder sb = new StringBuilder();
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     int n = Integer.parseInt(br.readLine());
 
     StringTokenizer st = new StringTokenizer(br.readLine());
     StringTokenizer st2 = new StringTokenizer(br.readLine());
+
+    Deque<Integer> d = new LinkedList<>();
+
     int m = Integer.parseInt(br.readLine());
 
     for (int i = 0; i < n; i++) {
       int value = Integer.parseInt(st.nextToken());
       if (value == 0 && m > 0) {
         m--;
-        sb.append(Integer.parseInt(st2.nextToken()) + " ");
+        d.addFirst(Integer.parseInt(st2.nextToken()));
       } else {
         st2.nextToken();
       }
@@ -24,21 +27,14 @@ public class B24511 {
 
     st = new StringTokenizer(br.readLine());
 
-    if (sb.isEmpty()) {
-      while (st.hasMoreTokens()) {
-        sb.append(Integer.parseInt(st.nextToken()) + " ");
-      }
-    } else {
-      if (sb.length() > 0) {
-        sb.deleteCharAt(sb.length() - 1);
-      }
-      sb.reverse();
-      sb.append(" ");
-      for (int i = 0; i < m; i++) {
-        sb.append(Integer.parseInt(st.nextToken()) + " ");
-      }
+    while (!d.isEmpty()) {
+      bw.write(d.pop() + " ");
     }
 
-    System.out.println(sb);
+    for (int i = 0; i < m; i++) {
+      bw.write(Integer.parseInt(st.nextToken()) + " ");
+    }
+
+    bw.flush();
   }
 }
