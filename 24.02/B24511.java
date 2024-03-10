@@ -17,8 +17,7 @@ public class B24511 {
 
     for (int i = 0; i < n; i++) {
       int value = Integer.parseInt(st.nextToken());
-      if (value == 0 && m > 0) {
-        m--;
+      if (value == 0) {
         d.addFirst(Integer.parseInt(st2.nextToken()));
       } else {
         st2.nextToken();
@@ -27,7 +26,8 @@ public class B24511 {
 
     st = new StringTokenizer(br.readLine());
 
-    while (!d.isEmpty()) {
+    while (!d.isEmpty() && m > 0) {
+      m--;
       bw.write(d.pop() + " ");
     }
 
