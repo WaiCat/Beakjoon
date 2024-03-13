@@ -32,11 +32,11 @@ public class B1014 {
       dp[0] = seat[0];
       ntable[0][0] = true;
 
-      if (m > 0) {
+      if (m > 1) {
         dp[1] = seat[1];
         ntable[1][1] = true;
       }
-      if (m > 1) {
+      if (m > 2) {
         if (seat[2] + dp[0] > dp[1]) {
           dp[2] = seat[2] + dp[0];
           ntable[2] = ntable[0];
@@ -80,7 +80,6 @@ public class B1014 {
   }
 
   private static boolean checkAllSurroundingsX(char[][] array, int row, int col) {
-    // 주위의 인덱스
     int[] rows = { -1, -1, 0, 0, 1, 1 };
     int[] cols = { -1, 1, -1, 1, -1, 1 };
 
@@ -88,9 +87,8 @@ public class B1014 {
       int newRow = row + rows[i];
       int newCol = col + cols[i];
 
-      // 주위의 인덱스가 배열 범위 내에 있는지 확인
-      if (newRow >= 0 && newRow < array.length && newCol >= 0 && newCol < array[newRow].length) {
-        if (array[newRow][newCol] != 'x') {
+      if (newRow >= 0 && newRow < array.length && newCol >= 0) {
+        if (newCol < array[newRow].length && array[newRow][newCol] != 'x') {
           return false;
         }
       }
